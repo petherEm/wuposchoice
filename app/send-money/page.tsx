@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Send() {
   return (
-    <main className="p-10 flex items-start space-x-8">
+    <main className="p-10 flex flex-col md:flex-row items-start space-x-8">
       <div className="lg:flex-[70%] flex-[80%]">
         <SendMoney />
       </div>

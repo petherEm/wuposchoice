@@ -25,13 +25,15 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { SenderValidation } from "@/lib/validations/sender";
+import { ReceiverValidation } from "@/lib/validations/receiver";
+import ReceiverDialog from "../ReceiverDialog";
 
 const ReceiverDetails = () => {
-  const form = useForm<z.infer<typeof SenderValidation>>({
-    resolver: zodResolver(SenderValidation),
+  const form = useForm<z.infer<typeof ReceiverValidation>>({
+    resolver: zodResolver(ReceiverValidation),
   });
 
-  function onSubmit(data: z.infer<typeof SenderValidation>) {
+  function onSubmit(data: z.infer<typeof ReceiverValidation>) {
     console.log(data);
   }
 
@@ -55,7 +57,7 @@ const ReceiverDetails = () => {
                   name="firstName"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <Input type="text" placeholder="FIRST NAME" />
+                      <Input type="text" placeholder="FIRST NAME" {...field} />
 
                       <FormMessage />
                     </FormItem>
@@ -66,7 +68,7 @@ const ReceiverDetails = () => {
                   name="lastName"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <Input type="text" placeholder="LAST NAME" />
+                      <Input type="text" placeholder="LAST NAME" {...field} />
 
                       <FormMessage />
                     </FormItem>
@@ -101,12 +103,18 @@ const ReceiverDetails = () => {
                   name="mobileNumber"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <Input type="text" placeholder="MOBILE NUMBER" />
+                      <Input
+                        type="text"
+                        placeholder="MOBILE NUMBER"
+                        {...field}
+                      />
 
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+
+                <ReceiverDialog firstName={form.watch("firstName")} />
               </div>
             </form>
           </Form>

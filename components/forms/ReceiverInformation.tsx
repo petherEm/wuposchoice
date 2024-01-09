@@ -83,9 +83,7 @@ const ReceiverInformation = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Receiver Choice">
-                          LET YOUR RECEIVER CHOOSE
-                        </SelectItem>
+                        <SelectItem value="WU Wallet">WU Wallet</SelectItem>
                         <SelectItem value="Money in Minutes">
                           MONEY IN MINUTES
                         </SelectItem>

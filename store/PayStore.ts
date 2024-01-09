@@ -27,7 +27,7 @@ interface PayStore {
 }
 
 export const usePayStore = create<PayStore>((set, get) => ({
-  fundsOut: "Receiver Choice",
+  fundsOut: "WU Wallet",
   fundsInAmount: 100,
   country: "RO",
   currency: "RON",
@@ -51,20 +51,20 @@ export const usePayStore = create<PayStore>((set, get) => ({
   setBonusAmount: (bonusAmount: number) => {
     const currentState = get();
     if (
-      currentState.fundsOut === "Ecosystem" &&
+      currentState.fundsOut === "WU Wallet" &&
       (currentState.country === "RO" || currentState.country === "PL")
     ) {
       set({ bonusAmount });
     }
   },
   setBonusCurrency: (bonusCurrency: string) => {
-    if (get().fundsOut === "Ecosystem") {
+    if (get().fundsOut === "WU Wallet") {
       set({ bonusCurrency });
     }
   },
 
   setDeliveryTime: (deliveryTime: string) => {
-    if (get().fundsOut === "Ecosystem" || get().fundsOut === "Cash") {
+    if (get().fundsOut === "WU Wallet" || get().fundsOut === "Cash") {
       set({ deliveryTime: "Instant" });
     } else {
       set({ deliveryTime: "1-2 Business days" });

@@ -4,6 +4,7 @@ import TransferInformation from "./forms/TransferInformation";
 import SenderDetails from "./forms/SenderDetails";
 import ReceiverDetails from "./forms/ReceiverDetails";
 import Submission from "./Submission";
+import ReceiverDialog from "./ReceiverDialog";
 
 const SendMoney = () => {
   const showRest = true;

@@ -18,6 +18,7 @@ const Navbar = async () => {
         <div className="ml-4 text-white w-[700px]">
           <h1 className="font-bold text-lg">Welcome, PIOTR MACIEJEWSKI</h1>
           <h2 className="text-[9px]">Last log in: 20/04/2023</h2>
+          <h3 className="text-[9px]">Coded by Piotr</h3>
         </div>
       </div>
 

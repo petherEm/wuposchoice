@@ -31,8 +31,8 @@ const SenderDetails = () => {
     resolver: zodResolver(SenderValidation),
   });
 
-  function onSubmit(data: z.infer<typeof SenderValidation>) {
-    console.log(data);
+  function onSubmit(values: z.infer<typeof SenderValidation>) {
+    console.log(values);
   }
 
   return (

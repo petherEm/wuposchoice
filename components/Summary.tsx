@@ -14,6 +14,19 @@ const Summary = () => {
       <div className="bg-slate-600 text-white tracking-wide p-2">
         <h1>SUMMARY</h1>
       </div>
+      {(country === "RO" || country === "PL") && fundsOut === "WU Wallet" ? (
+        <div className="flex flex-col bg-yellow-400">
+          <p className="text-[10px] font-light p-1">
+            1st transaction to WU Wallet entitles your receiver to 10 EUR bonus
+          </p>
+          <div className="flex justify-between items-center bg-yellow-400 p-1">
+            <p className="text-sm font-light">BONUS FOR RECEIVER</p>
+            <p className="text-sm font-light">10 EUR</p>
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
 
       <div className="mt-6 p-8">
         <div className="flex justify-between items-center">
@@ -28,15 +41,6 @@ const Summary = () => {
           <p className="text-sm font-light">Total to Receiver</p>
           <p className="text-sm font-light">0.00 EUR</p>
         </div>
-        {(country === "RO" || country === "PL") &&
-        fundsOut === "Receiver Choice" ? (
-          <div className="flex justify-between items-center bg-yellow-400 p-1">
-            <p className="text-sm font-light">BONUS FOR RECEIVER</p>
-            <p className="text-sm font-light">10 EUR</p>
-          </div>
-        ) : (
-          <div></div>
-        )}
 
         <div className="mt-8 h-[1.5px] bg-black w-full" />
 
@@ -51,7 +55,7 @@ const Summary = () => {
         <div className="mt-1 flex justify-between items-center">
           <p className="text-sm font-bold">Delivery time</p>
           <p className="text-sm font-bold">
-            {fundsOut === "Receiver Choice" || fundsOut === "Money in Minutes"
+            {fundsOut === "WU Wallet" || fundsOut === "Money in Minutes"
               ? "In Minutes"
               : "1-3 Business Days"}
           </p>
